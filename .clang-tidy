@@ -1,0 +1,18 @@
+# Включаем нужные группы проверок
+Checks: >
+  -*,
+  modernize-*, readability-*, performance-*, bugprone-*, clang-analyzer-*
+
+# Дополнительные опции
+CheckOptions:
+  # Примеры опций для конкретных правил (можно расширять)
+  readability-function-cognitive-complexity.CognitiveComplexityThreshold: "15"
+  readability-braces-around-statements.ShortIfLines: "3"
+  modernize-use-trailing-return-type: true
+
+Includes:
+  - "${VCPKG_ROOT}/installed/x64-linux/include" # Замените x64-windows на ваш triplet
+WarningsAsErrors: "" # Можно указать конкретные ошибки, если хочешь "fail on warning"
+FormatStyle: none
+UseColor: true
+HeaderFilterRegex: "" # Показывать всё
