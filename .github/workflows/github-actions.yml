@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: CI/CD for cpp-endpoint
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
@@ -16,3 +16,13 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  Deploy-To-Github-Registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and push the image
+        run: |
+          docker login --username z0tedd --password ${{ secrets.GH_PAT }} ghcr.io 
+          docker build . --tag ghcr.io/z0tedd/cpp-endpoint-example:latest
+          docker push ghcr.io/z0tedd/cpp-endpoint-example:latest

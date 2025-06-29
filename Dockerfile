@@ -18,7 +18,7 @@ WORKDIR /app
 COPY . .
 
 # Сборка приложения
-RUN rm -R build && mkdir build && cd build && cmake .. && make
+RUN  mkdir build && cd build && cmake .. && make
 
 
 RUN ls -al /app/build
