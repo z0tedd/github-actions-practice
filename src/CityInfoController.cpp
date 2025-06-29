@@ -1,6 +1,5 @@
 #include "CityInfoController.h"
 #include <drogon/HttpResponse.h>
-#include <iostream>
 
 void CityInfoController::getCityInfo(
     const HttpRequestPtr &req,
