@@ -1,4 +1,6 @@
 {
+  "name": "github-actions",
   "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
-  "dependencies": ["drogon"]
+  "dependencies": ["drogon"],
+  "builtin-baseline": "0cb95c860ea83aafc1b24350510b30dec535989a"
 }
